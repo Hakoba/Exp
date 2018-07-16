@@ -3,6 +3,8 @@ import './sass/base.sass';
 import $ from 'jquery';
 import cl from './js/main.js';
 import img from './img/favicon.ico';
+import Rellax from 'rellax';
+import {lory} from 'lory.js';
 
 // <меню на мобильных>
 $("#toggle").click(function(){
@@ -41,3 +43,19 @@ $(window).scroll(function(){
 
 
 })
+
+//
+ var rellax = new Rellax('.rellax');
+ //
+ document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.querySelector('.js_slider');
+
+    lory(slider, {
+        infinite: 1,
+        enableMouseEvents: true,
+        classNameFrame: 'js_frame',
+        classNameSlideContainer: 'js_slides',
+        classNamePrevCtrl: 'slider-prev',
+        classNameNextCtrl: 'slider-next'
+    });
+});
