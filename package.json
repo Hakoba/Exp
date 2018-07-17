@@ -31,6 +31,7 @@
     "jquery": "^3.3.1",
     "lory.js": "^2.5.1",
     "parallax-js": "^3.1.0",
-    "rellax": "^1.6.2"
+    "rellax": "^1.6.2",
+    "scrollreveal": "^3.4.0"
   }
 }

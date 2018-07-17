@@ -9,6 +9,7 @@
     <title>SiteName</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
 </head>
 <body>
@@ -17,10 +18,10 @@
             <a href="">Hakoba</a>
         </span>
         <ul class="menu">
-                <li><a href="#">home</a></li>
+                <li><a href="#home">home</a></li>
                 <li><a href="#">sites</a></li>
-                <li><a href="#">gallery</a></li>
-                <li><a href="#">SLDR</a></li> 
+                <li><a href="#gallery">gallery</a></li>
+                <li><a href="#slider">SLDR</a></li> 
         </ul>
         <div id="toggle">
             <div class="span" id="one"></div>
@@ -39,29 +40,38 @@
                 <li><a href="#">SLDR</a></li>
         </ul>
     </div>
-    <header >
+    <header id="home" >
             <div class="content">
-                <h1 class="rellax" data-rellax-speed="3" >Portfolio and other</h1>
+                <h1 class="rellax scrollClass" data-rellax-speed="4" >Portfolio and other</h1>
             </div>  
-        </header>
-        <section class="works">
-            <h1 id="sites" class="rellax" data-rellax-speed="0.8">Slider</h1>
-            <div class="slider js_slider">
+    </header>
+        <section id="slider" class="works">
+            <h1 id="sites" class="rellax" data-rellax-speed="1">Slider</h1>
+            <div class="slider js_slider ">
                     <div class="frame js_frame">
                         <div class="slides js_slides">
-                            <img src="img/slide1.jpeg" class="js_slide"/>
-                            <img src="img/slide2.jpeg" class="js_slide"/>
                             <img src="img/slide3.jpeg" class="js_slide"/>
+                            <img src="img/slide2.jpeg" class="js_slide"/>
+                            <img src="img/slide1.jpeg" class="js_slide"/>
                             <img src="img/slide4.jpeg" class="js_slide"/>
                             
                         </div>
                     </div>
-                    <button class="slider-prev">  </button>
-                    <button class="slider-next">  </button>
+                    <button class="slider-prev"> 
+                            L 
+                    </button>
+                    <button class="slider-next"> 
+                            R
+                         </button>
 
             </div>
         </section>
-    
+        <section class="textcontainer">
+            <div class="wrapper">
+                    <h1 id="gallery" class="scrollClass2">Gallery</h1>
+                <p class="scrollClass2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere odio nesciunt accusantium fugit dolore veritatis impedit provident autem molestias, obcaecati tempore saepe libero perspiciatis vitae eius quia tenetur qui laboriosam nihil neque. Quod quos quae, officiis sint similique expedita quidem! Earum molestias debitis, omnis laboriosam sed quaerat. Cumque reprehenderit, autem quisquam alias explicabo numquam quod vel nihil, excepturi ut minima facere mollitia doloremque molestiae optio atque quia possimus hic aliquam! Saepe doloremque, velit perspiciatis rem culpa quo corporis pariatur iste at quos illo. Repellendus libero quidem non reprehenderit eligendi voluptatibus vitae hic voluptas, atque deserunt ipsa tenetur repellat suscipit quae recusandae deleniti expedita nulla? Nam corrupti, voluptatum quaerat amet earum explicabo voluptate, labore praesentium atque accusantium iure sint unde est dolor rem, tempora corporis error. Dolor maxime, perspiciatis laborum ad repellendus exercitationem facere voluptates distinctio commodi dolorem a quos eius suscipit doloribus, obcaecati recusandae deleniti assumenda, ratione illo expedita sunt porro laboriosam et! Soluta repellendus atque sunt asperiores nam consectetur at? Esse laborum tempore amet est ab cupiditate recusandae ex quo repudiandae quae assumenda corrupti, obcaecati, facere similique corporis vel possimus adipisci quos minima reprehenderit facilis? Accusamus itaque fugiat atque ducimus quaerat repellendus corporis. Illo assumenda facere eos commodi? A.</p>
+            </div>
+        </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <script src="main.js"></script>
 </body>
