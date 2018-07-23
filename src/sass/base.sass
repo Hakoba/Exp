@@ -45,7 +45,7 @@ nav
   display: block
   height: 50px
   top: 0
-  transition: top 0.7s
+  transition: all 0.7s
   border-bottom: 1px solid rgba(28, 27, 30, 0.7)
   .scrollIndicator
     position: absolute
@@ -240,38 +240,58 @@ button
     outline: none
 
 .gallery
-  max-height: 100vh
+  max-height: 100%
   text-align: center
+  position: relative
   #gallery
     font-size: 40px
     color: white
     margin: 0
   .wrapper
+    margin-top: 1em
     max-height: inherit
     display: flex
     position: relative
     justify-content: center
+    margin-left: 2em
+    margin-right: 2em
     .text-container
-      max-width: 50%
+      min-width: 50%
       display: flex
       flex-direction: column
       align-content: center
       p
-        margin: 1em 8em
+        margin: 1em 1em 
         text-align: justify
         color: white
       h3
-        margin: 2em 8em 0 8em
+        margin: 0 1em
         color: white
         text-align: left
     .img-container
-      width: 50%
-      max-width: 600px
+      min-width: 50%
+      
       img
-        margin-top: 2em
-        height: 50%
-        max-height: 550px
-        
+
+        max-width: 100%
+        height: auto
+        //max-height: 550px
+  .hakoba
+    position: relative
+    
+  
+    #copy
+      color: white
+      a
+        color: #aaaaaa
+        text-transform: uppercase
+        text-decoration: none
+        &:hover
+          color: $accent
+          transition: .2s
+    
+
+          
 
       
     
@@ -295,11 +315,11 @@ button
 
 
 
-@media(max-width: 1020px)
+@media(max-width: 1120px)
   nav
     
     .menu
-      left: 30%
+      left: 28%
 @media(max-width: 768px)
   #toggle
     visibility: visible
@@ -320,26 +340,23 @@ button
    .content
       h1
         font-size: 40px
-  .textcontainer
-    .wrapper
-      p
-        margin: 1em 2.5em
+
   .works
     .js_frame
       height: 100%
   .gallery
+    min-height: 100vh
     .wrapper
       flex-direction: column
+      margin-left: 0
+      margin-right: 0
       .text-container
-        width: 100vw
-        margin: 0
-        p
-          margin: 1em 1em
-          width: 100%
+       padding-right: 1em
+       padding-left: 1em
       .img-container
-        width: 100%
-        visibility: hidden
-        display: none
+    #second_container
+      flex-direction: column-reverse
+
 @media(min-width: 768px)
   #resize
     visibility: hidden !important

@@ -7,18 +7,15 @@ import Rellax from 'rellax';
 import {lory} from 'lory.js';
 import ScrollReveal from 'scrollreveal'
 // <меню на мобильных>
-$("#toggle").click(function(){
+
+function toggleMenu() {
     $(this).toggleClass('on');
     $("#resize").toggleClass('active');
     $("nav").toggleClass('bgc-zero');
     $(".scrollIndicator").toggleClass('bgc-zero');
-});
-$(".menu").click(function(){
-    $(this).toggleClass('on');
-    $("#resize").toggleClass('active');
-    $("nav").toggleClass('bgc-zero');
-    $(".scrollIndicator").toggleClass('bgc-zero');
-});
+}
+$("#toggle").click(toggleMenu);
+$(".menu").click(toggleMenu);
 
 // двигающийся <header img>
 /*let winWidth = $(window).width();
