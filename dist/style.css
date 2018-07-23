@@ -2341,6 +2341,27 @@ body {
   background-color: #312d38;
   font-family: "Open Sans"; }
 
+.preloader {
+  background-color: #111111;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  position: fixed;
+  padding: 0;
+  font-family: 'Poppins'; }
+  .preloader .count h1 {
+    color: #ffffff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 100px;
+    margin: 0;
+    transform: translate(-50%, -50%); }
+  .preloader.done {
+    opacity: 0;
+    transition: all 0.5s;
+    visibility: hidden; }
+
 nav {
   position: fixed;
   width: 100%;
@@ -2392,7 +2413,7 @@ nav {
   position: relative;
   right: 20px;
   top: 5px;
-  z-index: 999;
+  z-index: 998;
   width: 30px;
   height: 30px;
   cursor: pointer;
@@ -2499,7 +2520,7 @@ header {
     right: 0; }
   .works .js_frame {
     width: 100%;
-    height: 80%;
+    height: 100vh;
     position: relative;
     overflow: hidden;
     white-space: nowrap;
@@ -2543,17 +2564,38 @@ button {
   button:focus {
     outline: none; }
 
-.textcontainer .wrapper {
-  text-align: center;
-  position: relative; }
-  .textcontainer .wrapper #gallery {
+.gallery {
+  max-height: 100vh;
+  text-align: center; }
+  .gallery #gallery {
     font-size: 40px;
     color: white;
     margin: 0; }
-  .textcontainer .wrapper p {
-    margin: 1em 8em;
-    text-align: justify;
-    color: white; }
+  .gallery .wrapper {
+    max-height: inherit;
+    display: flex;
+    position: relative;
+    justify-content: center; }
+    .gallery .wrapper .text-container {
+      max-width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-content: center; }
+      .gallery .wrapper .text-container p {
+        margin: 1em 8em;
+        text-align: justify;
+        color: white; }
+      .gallery .wrapper .text-container h3 {
+        margin: 2em 8em 0 8em;
+        color: white;
+        text-align: left; }
+    .gallery .wrapper .img-container {
+      width: 50%;
+      max-width: 600px; }
+      .gallery .wrapper .img-container img {
+        margin-top: 2em;
+        height: 50%;
+        max-height: 550px; }
 
 @media (max-width: 1020px) {
   nav .menu {
@@ -2574,7 +2616,21 @@ button {
   header .content h1 {
     font-size: 40px; }
   .textcontainer .wrapper p {
-    margin: 1em 2.5em; } }
+    margin: 1em 2.5em; }
+  .works .js_frame {
+    height: 100%; }
+  .gallery .wrapper {
+    flex-direction: column; }
+    .gallery .wrapper .text-container {
+      width: 100vw;
+      margin: 0; }
+      .gallery .wrapper .text-container p {
+        margin: 1em 1em;
+        width: 100%; }
+    .gallery .wrapper .img-container {
+      width: 100%;
+      visibility: hidden;
+      display: none; } }
 
 @media (min-width: 768px) {
   #resize {
