@@ -10,6 +10,14 @@ import ScrollReveal from 'scrollreveal'
 $("#toggle").click(function(){
     $(this).toggleClass('on');
     $("#resize").toggleClass('active');
+    $("nav").toggleClass('bgc-zero');
+    $(".scrollIndicator").toggleClass('bgc-zero');
+});
+$(".menu").click(function(){
+    $(this).toggleClass('on');
+    $("#resize").toggleClass('active');
+    $("nav").toggleClass('bgc-zero');
+    $(".scrollIndicator").toggleClass('bgc-zero');
 });
 
 // двигающийся <header img>
@@ -22,19 +30,46 @@ $('header').mousemove(function(e){
 })*/
 
 $(document).ready(function(){
-	$(".menu").on("click","a", function (event) {
-		//отменяем стандартную обработку нажатия по ссылке
+    
+    let
+     images = document.images,
+     allImages = images.length,
+     loadedImages = 0,
+     preloader =  document.querySelector('.preloader'),
+     h1Display = document.querySelector('.preloadCount')
+
+     for( let i = 0; i  < allImages; i++){
+       let imageClone      = new Image;
+        imageClone.onload  = imageLoaded;
+        imageClone.onerroe = imageLoaded;
+        imageClone.src     = images[i].src
+     }
+     function imageLoaded() {
+        
+          loadedImages++;
+          console.log(loadedImages + "loadedImages")
+          h1Display.innerHTML = (( (100 / allImages) * loadedImages) << 0 )+'%'
+            if(loadedImages>=allImages)
+            {
+                setTimeout(() => {
+                    if(!preloader.classList.contains('done'))
+                    {
+                        preloader.classList.add('done')
+                    }
+            }, 200);
+            }
+
+     }
+    
+	$(".menu").on("click","a", function (event) {	
 		event.preventDefault();
-
-		//забираем идентификатор бока с атрибута href
 		var id  = $(this).attr('href'),
-
-		//узнаем высоту от начала страницы до блока на который ссылается якорь
 			top = $(id).offset().top;
-		
-		//анимируем переход на расстояние - top за 1500 мс
 		$('body,html').animate({scrollTop: top}, 800);
-	});
+    });
+    
+
+
 });
 
 // Сворачивание <nav> при прокрутке вниз
@@ -56,6 +91,7 @@ $(window).scroll(function(){
     let scrolled = (winTop/(docHeigth-winHeight))*100;
     //console.log(scrolled);
     $('.scrollIndicator').css('width', (scrolled + '%'));
+
 
 
 })

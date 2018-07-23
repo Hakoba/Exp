@@ -14,11 +14,33 @@ body
   margin: 0
   background-color: $bgc
   font-family: "Open Sans"
+.preloader
+  background-color: #111111
+  width: 100%
+  height: 100%
+  z-index: 999
+  position: fixed
+  padding: 0
+  overflow: 
+  font-family: 'Poppins'
+  .count
+    h1
+      color: #ffffff
+      position: absolute
+      left: 50%
+      top: 50%
+      font-size: 100px
+      margin: 0
+      transform: translate(-50%, -50%)
+  &.done
+    opacity: 0
+    transition: all 0.5s
+    visibility: hidden
 
 nav
   position: fixed 
   width: 100%
-  z-index: 1 
+  z-index: 101 
   background: rgba(6, 5, 22, 0.94)
   display: block
   height: 50px
@@ -28,8 +50,8 @@ nav
   .scrollIndicator
     position: absolute
     bottom: 0
-    height: 4px
-    margin-bottom: -5px
+    height: 5px
+    margin-bottom: -6px
     background: rgb(79, 0, 32)
     width: 0%
   #brand
@@ -64,10 +86,10 @@ nav
           color: $accent
           transition: 0.3s ease-out
 #toggle 
-  position: absolute
+  position: relative
   right: 20px
   top: 5px
-  z-index: 20
+  z-index: 998 
   width: 30px
   height: 30px
   cursor: pointer
@@ -76,13 +98,14 @@ nav
   visibility: hidden
   opacity: 0
   .span
-    z-index: 999
     height: 3px
     background: #ffffff
     transition: 0.3s 
     backface-visibility: visible
     margin: 5px auto
     border-radius: 6px
+    position: relative
+    z-index: 120
   &.on
     #one
       transform: rotate(45deg) translateX(2px) translateY(4px) 
@@ -91,7 +114,7 @@ nav
     #three
       transform: rotate(-45deg) translateX(8px) translateY(-10px)  
 #resize
-  z-index: 10
+  z-index: 100
   top: 0px
   position: fixed
   background: #000
@@ -125,7 +148,8 @@ nav
     visibility: visible
     opacity: 0.95
 
-  
+.bgc-zero
+  background: rgba(0,0,0,0) 
     
 
 .menu
@@ -175,7 +199,7 @@ header
     right: 0
   .js_frame
     width: 100%
-    height: 80%
+    height: 100vh
     position: relative
     overflow: hidden
     white-space: nowrap
@@ -215,19 +239,42 @@ button
   &:focus
     outline: none
 
-.textcontainer
+.gallery
+  max-height: 100vh
+  text-align: center
+  #gallery
+    font-size: 40px
+    color: white
+    margin: 0
   .wrapper
-    text-align: center
+    max-height: inherit
+    display: flex
     position: relative
-    #gallery
-      font-size: 40px
-      color: white
-      margin: 0
-    p
-      margin: 1em 8em
-      text-align: justify
-      color: white  
-  
+    justify-content: center
+    .text-container
+      max-width: 50%
+      display: flex
+      flex-direction: column
+      align-content: center
+      p
+        margin: 1em 8em
+        text-align: justify
+        color: white
+      h3
+        margin: 2em 8em 0 8em
+        color: white
+        text-align: left
+    .img-container
+      width: 50%
+      max-width: 600px
+      img
+        margin-top: 2em
+        height: 50%
+        max-height: 550px
+        
+
+      
+    
   
 
     
@@ -258,6 +305,7 @@ button
     visibility: visible
     opacity: 1
     margin-top: 6px
+    z-index: 2000
   nav
     #brand
       a
@@ -272,6 +320,26 @@ button
    .content
       h1
         font-size: 40px
+  .textcontainer
+    .wrapper
+      p
+        margin: 1em 2.5em
+  .works
+    .js_frame
+      height: 100%
+  .gallery
+    .wrapper
+      flex-direction: column
+      .text-container
+        width: 100vw
+        margin: 0
+        p
+          margin: 1em 1em
+          width: 100%
+      .img-container
+        width: 100%
+        visibility: hidden
+        display: none
 @media(min-width: 768px)
   #resize
     visibility: hidden !important

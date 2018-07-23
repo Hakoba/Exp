@@ -2344,7 +2344,7 @@ body {
 nav {
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 101;
   background: rgba(6, 5, 22, 0.94);
   display: block;
   height: 50px;
@@ -2354,8 +2354,8 @@ nav {
   nav .scrollIndicator {
     position: absolute;
     bottom: 0;
-    height: 4px;
-    margin-bottom: -5px;
+    height: 5px;
+    margin-bottom: -6px;
     background: #4f0020;
     width: 0%; }
   nav #brand {
@@ -2389,10 +2389,10 @@ nav {
           transition: 0.3s ease-out; }
 
 #toggle {
-  position: absolute;
+  position: relative;
   right: 20px;
   top: 5px;
-  z-index: 20;
+  z-index: 999;
   width: 30px;
   height: 30px;
   cursor: pointer;
@@ -2401,13 +2401,14 @@ nav {
   visibility: hidden;
   opacity: 0; }
   #toggle .span {
-    z-index: 999;
     height: 3px;
     background: #ffffff;
     transition: 0.3s;
     backface-visibility: visible;
     margin: 5px auto;
-    border-radius: 6px; }
+    border-radius: 6px;
+    position: relative;
+    z-index: 120; }
   #toggle.on #one {
     transform: rotate(45deg) translateX(2px) translateY(4px); }
   #toggle.on #two {
@@ -2416,7 +2417,7 @@ nav {
     transform: rotate(-45deg) translateX(8px) translateY(-10px); }
 
 #resize {
-  z-index: 10;
+  z-index: 100;
   top: 0px;
   position: fixed;
   background: #000;
@@ -2448,6 +2449,9 @@ nav {
     display: table;
     visibility: visible;
     opacity: 0.95; }
+
+.bgc-zero {
+  background: rgba(0, 0, 0, 0); }
 
 .menu li {
   text-transform: uppercase;
@@ -2559,7 +2563,8 @@ button {
   #toggle {
     visibility: visible;
     opacity: 1;
-    margin-top: 6px; }
+    margin-top: 6px;
+    z-index: 2000; }
   nav #brand a {
     margin-left: 10px; }
   nav .menu {
@@ -2567,7 +2572,9 @@ button {
   .menu a {
     font-size: 20px; }
   header .content h1 {
-    font-size: 40px; } }
+    font-size: 40px; }
+  .textcontainer .wrapper p {
+    margin: 1em 2.5em; } }
 
 @media (min-width: 768px) {
   #resize {
